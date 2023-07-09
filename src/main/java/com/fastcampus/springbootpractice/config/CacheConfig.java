@@ -20,6 +20,6 @@ public class CacheConfig {
                 .entryTtl(Duration.ofSeconds(10)) // cache life cycle
                 // json 형태로 value값 출력하게 변경.
                 .serializeValuesWith(SerializationPair.fromSerializer(new GenericJackson2JsonRedisSerializer()));
-        
+
     }
 }

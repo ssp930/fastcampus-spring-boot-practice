@@ -5,13 +5,11 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import org.springframework.stereotype.Component;
 
-import java.io.Serializable;
-
 @Data
 @NoArgsConstructor
 @AllArgsConstructor(staticName = "of")
 @Component
-public class Student {
+public class Student { // implements Serializable{
     private String name;
     private Integer age;
     private Grade grade;
