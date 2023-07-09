@@ -23,5 +23,8 @@ public class StudentService {
     @PostConstruct
     public void init() {
         studentRepository.enroll("jack", 15, Student.Grade.B);
+        studentRepository.enroll("fred", 15, Student.Grade.B);
+        studentRepository.enroll("cassie", 15, Student.Grade.B);
     }
+
 }
