@@ -15,8 +15,13 @@ repositories {
     mavenCentral()
 }
 
-dependencies {
+ext {
+    set('springCloudVersion', "2021.0.8")
+}
 
+dependencies {
+    implementation 'org.springframework.cloud:spring-cloud-starter-vault-config'
+//    implementation 'org.springframework.boot:spring-boot-starter-data-cache'
     implementation 'org.springframework.boot:spring-boot-starter-data-redis'
     implementation 'org.springframework.boot:spring-boot-starter-actuator'
     implementation 'org.springframework.boot:spring-boot-starter-web'
@@ -24,6 +29,12 @@ dependencies {
     compileOnly 'org.projectlombok:lombok'
     annotationProcessor 'org.projectlombok:lombok'
     annotationProcessor 'org.springframework.boot:spring-boot-configuration-processor'
+}
+
+dependencyManagement {
+    imports {
+        mavenBom "org.springframework.cloud:spring-cloud-dependencies:${springCloudVersion}"
+    }
 }
 
 tasks.named('test') {
